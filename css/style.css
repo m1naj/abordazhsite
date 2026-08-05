@@ -220,6 +220,7 @@ h1,h2,h3{font-family:'Yeseva One',serif;font-weight:400;line-height:1.2}
   background:radial-gradient(#c04434,#7d2418 70%);box-shadow:inset 0 0 8px #00000088,0 3px 8px #00000066}
 .note .who{display:block;margin-top:.9rem;font-family:'Alegreya',serif;font-size:1rem;font-style:normal;letter-spacing:.05em;color:#6b4a12}
 .note .who b{color:var(--red)}
+.reviews-more {display:block;margin-top:3rem;margin-inline:auto;width:fit-content;}
 
 /* ============ БЛОГ ============ */
 .blog{padding:6.5rem 0;background:var(--sea-900)}
