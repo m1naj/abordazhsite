@@ -1,10 +1,7 @@
 <?php
-require_once '../config.php';
+require_once __DIR__ . '/../config.php';
+requireAdmin();
 
-if (empty($_SESSION['admin_auth'])) {
-    jsonResponse(['error' => 'Unauthorized'], 401);
-}
-
-$stmt = $pdo->query("SELECT id, name, contact, message, status, DATE_FORMAT(created_at, '%d.%m.%Y %H:%i') as date FROM leads ORDER BY created_at DESC");
-jsonResponse(['leads' => $stmt->fetchAll()]);
+$stmt = $pdo->query("SELECT id, name, contact, message, status, DATE_FORMAT(created_at, '%d.%m.%Y %H:%i') AS date FROM leads ORDER BY created_at DESC");
+echo json_encode(array('ok' => true, 'leads' => $stmt->fetchAll()));
 ?>

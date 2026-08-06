@@ -1,10 +1,7 @@
 <?php
-require_once '../config.php';
-
-if (empty($_SESSION['admin_auth'])) {
-    jsonResponse(['error' => 'Unauthorized'], 401);
-}
+require_once __DIR__ . '/../config.php';
+requireAdmin();
 
 $pdo->query("TRUNCATE TABLE leads");
-jsonResponse(['success' => true]);
+echo json_encode(array('ok' => true));
 ?>
