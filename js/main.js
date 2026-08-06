@@ -42,11 +42,46 @@ document.getElementById('conForm').addEventListener('submit', e => {
   if (!name.value.trim()) { name.focus(); return; }
   if (!contact.value.trim()) { contact.focus(); return; }
 
-  LeadDB.add({
-    name: name.value.trim(),
-    contact: contact.value.trim(),
-    message: message.value.trim()
-  });
+// Форма заявки → отправка на сервер
+document.getElementById('conForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const name = document.getElementById('fName');
+  const contact = document.getElementById('fTel');
+  const message = document.getElementById('fMsg');
+  
+  if (!name.value.trim()) { name.focus(); return; }
+  if (!contact.value.trim()) { contact.focus(); return; }
+
+  const btn = e.target.querySelector('button[type="submit"]');
+  const originalText = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Отправляем...';
+
+  try {
+    const res = await fetch('/api/add-lead.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: name.value.trim(),
+        contact: contact.value.trim(),
+        message: message.value.trim()
+      })
+    });
+    
+    if (!res.ok) throw new Error('Ошибка отправки');
+    
+    e.target.reset();
+    const ok = document.getElementById('formOk');
+    ok.classList.add('show');
+    setTimeout(() => ok.classList.remove('show'), 7000);
+  } catch (err) {
+    alert('Не удалось отправить заявку. Попробуйте позже или свяжитесь другим способом.');
+    console.error(err);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = originalText;
+  }
+});
 
   e.target.reset();
   const ok = document.getElementById('formOk');

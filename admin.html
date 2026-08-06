@@ -26,19 +26,24 @@
 
 <main class="admin-wrap container">
 
-  <!-- ВХОД -->
+  <!-- ЭКРАН ВХОДА -->
   <div class="login-card" id="gate">
     <h1>☠ Стой, кто идёт?</h1>
-    <p>В рубку допускаются только капитаны. Введите пароль.</p>
+    <p>В рубку допускаются только капитаны. Введите логин и пароль.</p>
     <form id="loginForm">
+      <label for="loginUser">Логин</label>
+      <input id="loginUser" type="text" placeholder="Имя капитана" autocomplete="username" required>
+      
       <label for="loginPass">Пароль</label>
-      <input id="loginPass" type="password" placeholder="Секретное слово команды" autocomplete="current-password">
-      <button class="btn" type="submit" style="margin-top:1.1rem">Поднять флаг</button>
+      <input id="loginPass" type="password" placeholder="Секретное слово команды" autocomplete="current-password" required>
+      
+      <button class="btn" type="submit" style="margin-top:1.1rem; width:100%">Поднять флаг</button>
+      
       <div class="login-err" id="loginErr">Неверный пароль! Порох отсыреет — попробуй ещё раз.</div>
     </form>
   </div>
 
-  <!-- ПАНЕЛЬ -->
+  <!-- ПАНЕЛЬ АДМИНА -->
   <section id="panel" hidden>
     <div class="panel-head">
       <h1>⚓ Судовой журнал заявок</h1>
@@ -64,11 +69,10 @@
         <tbody id="leadsBody"></tbody>
       </table>
     </div>
-    <p class="admin-note">Заявки хранятся в базе браузера (localStorage) этого устройства. Для боевого режима с общим сервером — скажите, подключу PHP + MySQL.</p>
   </section>
+
 </main>
 
-<script src="js/db.js"></script>
 <script src="js/admin.js"></script>
 </body>
 </html>
