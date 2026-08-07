@@ -74,3 +74,27 @@ document.getElementById('conForm').addEventListener('submit', async e => {
 });
 
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// Клик по карточке услуги → полёт к форме «Отправить голубя»
+document.querySelectorAll('.srv').forEach(card => {
+  card.setAttribute('tabindex', '0'); // карточку можно выбрать и с клавиатуры
+  card.addEventListener('click', () => goToForm(card));
+  card.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goToForm(card); }
+  });
+});
+
+function goToForm(card){
+  const form = document.getElementById('conForm');
+  form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+  // Бонус: подставляем услугу в сообщение, если поле пустое
+  const msg = document.getElementById('fMsg');
+  const service = card.querySelector('h3').textContent.trim();
+  if (!msg.value.trim()) {
+    msg.value = `Интересует «${service}». `;
+  }
+
+  // После прокрутки ставим курсор в поле имени — капитану сразу понятно, куда писать
+  setTimeout(() => document.getElementById('fName').focus({ preventScroll: true }), 700);
+}
