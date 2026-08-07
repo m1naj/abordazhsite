@@ -28,6 +28,8 @@ h1,h2,h3{font-family:'Yeseva One',serif;font-weight:400;line-height:1.2}
 
 /* Заголовки секций */
 .sec-head{text-align:center;margin-bottom:3.2rem}
+.sec-head a{font-size:1.5rem;}
+.sec-head a:hover{text-decoration: underline;}
 .overline{display:inline-block;letter-spacing:.4em;text-transform:uppercase;font-size:.95rem;color:var(--gold);margin-bottom:.6rem}
 .sec-head h2{font-size:clamp(1.9rem,4vw,2.8rem);color:var(--parchment);text-shadow:0 2px 0 #00000066}
 .orn{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:.9rem;color:var(--gold)}
@@ -225,18 +227,6 @@ h1,h2,h3{font-family:'Yeseva One',serif;font-weight:400;line-height:1.2}
 .note .who b{color:var(--red)}
 .reviews-more {display:block;margin-top:3rem;margin-inline:auto;width:fit-content;}
 
-/* ============ БЛОГ ============ */
-.blog{padding:6.5rem 0;background:var(--sea-900)}
-.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:1.9rem}
-.post{background:linear-gradient(#0e2a3d,#0a1c2c);border:2px solid #1d4258;border-radius:12px;padding:1.7rem;
-  transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;display:flex;flex-direction:column;gap:.75rem}
-.post:hover{transform:translateY(-8px);border-color:var(--gold);box-shadow:0 18px 40px #000000aa}
-.post .date{font-family:'Caveat',cursive;font-size:1.2rem;color:var(--gold)}
-.post h3{font-size:1.25rem;color:var(--parchment)}
-.post p{font-size:1.05rem;color:#b9cdd9;flex:1}
-.post a.more{align-self:flex-start;font-size:1rem;letter-spacing:.08em;border-bottom:2px dotted var(--gold-dim);transition:.25s}
-.post a.more:hover{color:#fff;border-color:var(--gold-bright);transform:translateX(4px)}
-
 /* ============ КОНТАКТЫ ============ */
 .contacts{padding:6.5rem 0;background:radial-gradient(900px 500px at 85% 10%,#0e2a3d66,transparent),var(--sea-950)}
 .con-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:2.8rem;align-items:start}
@@ -257,6 +247,11 @@ h1,h2,h3{font-family:'Yeseva One',serif;font-weight:400;line-height:1.2}
 .con-form input:focus,.con-form textarea:focus{border-bottom-style:solid;border-color:var(--red);background:#ffffff8c}
 .con-form textarea{resize:vertical;min-height:80px}
 .con-form .btn{margin-top:1.2rem}
+.con-form .call-btn{
+  display:inline-block;      /* чтобы ссылка вела себя как кнопка */
+  text-decoration:none;      /* убрать подчёркивание у <a> */
+  cursor:pointer;         /* отступ от «голубя» */
+}
 .form-ok{display:none;margin-top:1rem;font-family:'Caveat',cursive;font-size:1.4rem;color:#0c7a3d}
 .form-ok.show{display:block}
 .map-wrap{border-radius:10px;overflow:hidden;border:3px solid var(--gold-dim);box-shadow:0 20px 50px #000000aa;transform:rotate(.6deg)}
