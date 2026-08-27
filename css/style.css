@@ -270,7 +270,7 @@ h1,h2,h3{font-family:'Yeseva One',serif;font-weight:400;line-height:1.2}
 .max-ico img{width:100%;height:100%;object-fit:cover;transform:scale(1.18);display:block}
 .form-ok{display:none;margin-top:1rem;font-family:'Caveat',cursive;font-size:1.4rem;color:#0c7a3d}
 .form-ok.show{display:block}
-.map-wrap{border-radius:10px;overflow:hidden;border:3px solid var(--gold-dim);box-shadow:0 20px 50px #000000aa;transform:rotate(.6deg)}
+/* .map-wrap{border-radius:10px;overflow:hidden;border:3px solid var(--gold-dim);box-shadow:0 20px 50px #000000aa;transform:rotate(.6deg)} */
 .map-wrap svg{width:100%;height:auto}
 
 /* ============ ПОДВАЛ ============ */
@@ -322,4 +322,24 @@ footer{background:var(--sea-950);border-top:6px solid transparent;
   @keyframes bobC{0%,100%{transform:translateX(-50%) translateY(0) rotate(-1.5deg)}50%{transform:translateX(-50%) translateY(-12px) rotate(1.5deg)}}
   .compass-hero{display:none}
   .scroll-paper{padding:2.1rem 1.4rem}
+}
+.btn-map-route {
+    display: inline-block;
+    font-family: 'Yeseva One', serif;
+    font-size: 1.05rem;
+    color: #d4e4eb;
+    background: #927226;
+    border: none;
+    border-radius: 6px;
+    padding: 0.7rem 1.4rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.btn-map-route:hover {
+    background: rgba(216, 165, 49, 0.25);
+    color: #e8f0f5;
+    transform: translateY(-2px);
 }
