@@ -327,8 +327,8 @@ footer{background:var(--sea-950);border-top:6px solid transparent;
     display: inline-block;
     font-family: 'Yeseva One', serif;
     font-size: 1.05rem;
-    color: #d4e4eb;
-    background: #927226;
+    color: #241304;
+    background: #e7b844;
     border: none;
     border-radius: 6px;
     padding: 0.7rem 1.4rem;
@@ -340,6 +340,6 @@ footer{background:var(--sea-950);border-top:6px solid transparent;
 
 .btn-map-route:hover {
     background: rgba(216, 165, 49, 0.25);
-    color: #e8f0f5;
+    color: #241304;
     transform: translateY(-2px);
 }
